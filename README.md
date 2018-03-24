@@ -14,6 +14,8 @@
 
 - Fazer com que o jogador não tenha que digitar Y duas vezes caso o combate dura mais que 2 turnos.
 
+- Consertar o case 'B': na primeira tela de combate com o goblin.
+
 - Adicionar mais coisas na loja:
  > poção de hp
  

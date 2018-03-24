@@ -1,10 +1,10 @@
-# sacred-river
+# Sacred River
 
-/ Simple open-source text-based RPG made just with C by a begginer programmer.
+/ *Simple open-source text-based RPG made just with C by a begginer programmer.*
 
-/ Simples open-source text-based RPG feito apenas com C por um programador iniciante.
+/ *Simples open-source text-based RPG feito apenas com C por um programador iniciante.*
 
-TO DO LIST:
+# to do list:
 
 - Fazer com que defesa não torne hits negativos
  > Calculo de defesa: (hit * (defesa/2))/defesa ??

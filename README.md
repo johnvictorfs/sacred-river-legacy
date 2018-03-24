@@ -1,6 +1,8 @@
 # sacred-river
-Simple open-source text-based RPG made just with C by a begginer programmer.
-Simples open-source text-based RPG feito apenas com C por um programador iniciante.
+
+/ Simple open-source text-based RPG made just with C by a begginer programmer.
+
+/ Simples open-source text-based RPG feito apenas com C por um programador iniciante.
 
 TO DO LIST:
 

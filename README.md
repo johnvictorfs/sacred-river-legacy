@@ -7,9 +7,6 @@
 # to do list:
 
 - Fazer com que defesa não torne hits negativos
- > Calculo de defesa: (hit * (defesa/2))/defesa ??
- 
-    (10 * (2.5))/5) - (hit = 10 // defesa = 5) (hit com 0 defesa = 10, hit com 5 defesa = 5 (OP?)
 
 - Adicionar mais coisas na loja
  > poção de hp

@@ -26,3 +26,7 @@
 - Fazer com que poções de HP não curem acima do HP máximo.
 
 - Adicionar um Delay entre comandos e ações para o usuario não se perder.
+
+- Adicionar um sistema de Inventário para que itens não sejam substituidos ao equipar novas coisas, e sim armazenados nesse Inventário para uso posterior.
+
+- Adicionar sistema de troca de itens para desequipar um item e equipar outro.

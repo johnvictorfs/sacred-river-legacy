@@ -206,7 +206,7 @@ FERREIRO: /*  Loja do Ferreiro da Cidade principal, acessado via 'D' em COMANDOS
             case 'D':
             case 'd':
         	npc1 = rand() % 2; /* Seleciona um numero aleatorio entre 2 e 0, caso 1 voce encontra um goblin, caso 2/0 voce volta para a cidade (COMANDOS:)
-			BUG: mesmo caindo em 0 e 2, o programa continua rodando pro primeiro 'if' e encontrando o goblin, e não segue pro else */
+			BUG: mesmo caindo em 0 e 2, o programa continua rodando pro primeiro 'if' e encontrando o goblin, e nÃ£o segue pro else */
         	printf("\n%d\n",npc1);
         	if (npc1 = 1)
         	{
@@ -219,7 +219,7 @@ FERREIRO: /*  Loja do Ferreiro da Cidade principal, acessado via 'D' em COMANDOS
         	npc1hit1 = rand() % npc1atk;
         	
         		printf("\n*Andando pela floresta voce encontrou um Goblin!*");
-        		/* Aqui começa a luta com o goblin na floresta */
+        		/* Aqui comeÃ§a a luta com o goblin na floresta */
 COMBATEG1:		printf("\n\n---- Combate com Goblin ----\nAtaque: %d\nDefesa: %d\nHP: %d\n\nA: Atacar\n\nB: Fugir\n\n> ",npc1atk,npc1def,npc1hp);
         		scanf(" %d",&resposta1);
         		switch (resposta1)

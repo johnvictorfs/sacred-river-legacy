@@ -16,6 +16,8 @@
 
 - Consertar o case 'B': na primeira tela de combate com o goblin.
 
+- Fazer com que o HP tanto do usuário quanto do goblin, caso negativos, apareçam apenas como 0.
+
 - Adicionar mais coisas na loja:
  > poção de hp
  

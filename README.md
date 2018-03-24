@@ -6,18 +6,18 @@
 
 # to do list:
 
-- Fazer com que defesa não torne hits negativos
+- Fazer com que defesa não torne hits negativos (que curam o HP do jogador).
 
-- Adicionar mais coisas na loja
+- Adicionar mais coisas na loja:
  > poção de hp
  
  > poção de força?
 
-- Não exibir mensagem que roubaram seu item após comprar algo caso você não tenha nada equipado nesse slot
+- Não exibir mensagem que roubaram seu item após comprar algo caso você não tenha nada equipado nesse slot.
 
 - Adicionar Lore inicial no jogo.
 
-- Arrumar um jeito de limpar a tela de forma coesiva  em certos momentos pra não ter muita coisa ao msm tempo na tela que não seja necessário para o usuário
+- Arrumar um jeito de limpar a tela de forma coesiva  em certos momentos pra não ter muita coisa ao msm tempo na tela que não seja necessário para o jogador.
 
 - Fazer com que poções de HP não curem acima do HP máximo.
 

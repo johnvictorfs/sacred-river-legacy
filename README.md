@@ -4,6 +4,10 @@
 
 / *Simples open-source text-based RPG feito apenas com C por um programador iniciante.*
 
+![preview-start](https://i.imgur.com/U0edKG2.png)
+
+![preview-cbt](https://i.imgur.com/98QQjTs.png)
+
 # to do list:
 
 - Fazer com que defesa não torne hits negativos (que curam o HP do jogador).

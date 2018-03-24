@@ -24,6 +24,7 @@
 - Não exibir mensagem que roubaram seu item após comprar algo caso você não tenha nada equipado nesse slot.
 
 - Adicionar Lore inicial no jogo.
+ > Biblioteca na cidade principal?
 
 - Arrumar um jeito de limpar a tela de forma coesiva  em certos momentos pra não ter muita coisa ao msm tempo na tela que não seja necessário para o jogador.
 

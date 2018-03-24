@@ -12,6 +12,8 @@
 
 - Fazer com que defesa não torne hits negativos (que curam o HP do jogador).
 
+- Fazer com que o jogador não tenha que digitar Y duas vezes caso o combate dura mais que 2 turnos.
+
 - Adicionar mais coisas na loja:
  > poção de hp
  

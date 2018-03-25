@@ -10,13 +10,7 @@
 
 # to do list:
 
-- Fazer com que defesa não torne hits negativos (que curam o HP do jogador).
 
-- Fazer com que o jogador não tenha que digitar Y duas vezes caso o combate dura mais que 2 turnos.
-
-- Consertar o case 'B': na primeira tela de combate com o goblin.
-
-- Fazer com que o HP tanto do usuário quanto do goblin, caso negativos, apareçam apenas como 0.
 
 - Adicionar mais coisas na loja:
  > poção de hp
@@ -37,3 +31,13 @@
 - Adicionar um sistema de Inventário para que itens não sejam substituidos ao equipar novas coisas, e sim armazenados nesse Inventário para uso posterior.
 
 - Adicionar sistema de troca de itens para desequipar um item e equipar outro.
+
+# erros conhecidos:
+
+- Caso um combate dure mais que 2 turnos o usuário deve digitar Y duas vezes para continuar.
+
+- A tecla 'B' para fugir do primeiro combate com o goblin não funciona.
+
+- Defesa torna hits negativos, que curam o HP do usuário.
+
+- HP do usuário e de NPC's podem aparecer negativos, ao invés de finalizar sempre em 0.

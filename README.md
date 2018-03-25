@@ -32,6 +32,8 @@
 
 - Adicionar sistema de troca de itens para desequipar um item e equipar outro.
 
+- Adicionar um sistema de 'orações' (magias?) com efeitos especiais, sejam de combate ou não.
+
 # erros conhecidos:
 
 - Caso um combate dure mais que 2 turnos o usuário deve digitar Y duas vezes para continuar.

@@ -13,7 +13,7 @@
 
 
 - Adicionar mais coisas na loja:
- > poção de hp
+ > ~poção de hp~ Adicionado
  
  > poção de força?
 
@@ -22,11 +22,10 @@
 - Adicionar Lore inicial no jogo.
  > Biblioteca na cidade principal?
 
-- Arrumar um jeito de limpar a tela de forma coesiva  em certos momentos pra não ter muita coisa ao msm tempo na tela que não seja necessário para o jogador.
+- ~Arrumar um jeito de limpar a tela de forma coesiva  em certos momentos pra não ter muita coisa ao msm tempo na tela que não seja necessário para o jogador.~ Adicionado
 
-- Fazer com que poções de HP não curem acima do HP máximo.
 
-- Adicionar um Delay entre comandos e ações para o usuario não se perder.
+- ~Adicionar um Delay entre comandos e ações para o usuario não se perder.~ Adicionado
 
 - Adicionar um sistema de Inventário para que itens não sejam substituidos ao equipar novas coisas, e sim armazenados nesse Inventário para uso posterior.
 
@@ -36,10 +35,13 @@
 
 # erros conhecidos:
 
-- Caso um combate dure mais que 2 turnos o usuário deve digitar Y duas vezes para continuar.
+- ~Caso um combate dure mais que 2 turnos o usuário deve digitar Y duas vezes para continuar.~ Corrigido
+ 
+- ~A tecla 'B' para fugir do primeiro combate com o goblin não funciona.~ Corrigido
 
-- A tecla 'B' para fugir do primeiro combate com o goblin não funciona.
+- ~Defesa torna hits negativos, que curam o HP do usuário.~ Corrigido
 
-- Defesa torna hits negativos, que curam o HP do usuário.
+
+- ~Poções de HP curam acima do HP máximo.~ Corrigido
 
 - HP do usuário e de NPC's podem aparecer negativos, ao invés de finalizar sempre em 0.

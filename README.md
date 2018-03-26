@@ -4,9 +4,9 @@
 
 / *Simples open-source text-based RPG feito apenas com C por um programador iniciante.*
 
-![preview-start](https://i.imgur.com/U0edKG2.png)
+![preview-start](https://i.imgur.com/RVEaqZA.png)
 
-![preview-cbt](https://i.imgur.com/98QQjTs.png)
+![preview-cbt](https://i.imgur.com/VWgAGGm.png)
 
 # to do list:
 

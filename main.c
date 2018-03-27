@@ -47,26 +47,26 @@ int main(int argc, char *argv[]) {
 	char inicial,comando1,loja1,resposta1;
 
 	/*
-	Espada de Madeira = 1 // +5 ATK
-	Espada de Ferro = 2 // + 10 ATK
-	Espada de Aco = 3 // + 15 ATK
-	Espada de Adamantio = 4 // +20 ATK
+	Espada de Madeira // +5 ATK
+	Espada de Ferro // + 10 ATK
+	Espada de Aco // + 15 ATK
+	Espada de Adamantio // +20 ATK
 
-	Escudo de Madeira = 1 // +5 DEF
-	Escudo de Ferro = 2 // + 15 DEF
-	Escudo de Aco = 3 // + 22 DEF
-	Escudo de Adamantio = 4 // + 31 DEF
+	Escudo de Madeira // +5 DEF
+	Escudo de Ferro // + 15 DEF
+	Escudo de Aco // + 22 DEF
+	Escudo de Adamantio // + 31 DEF
 
-	Lanca de Madeira = 11 // + 7 ATK
-	Lanca de Ferro = 21 // + 20 ATK
-	Lanca de Aco = 31 // + 25 ATK
-	Lanca de Adamantio = 41 // + 35 ATK
+	Lanca de Madeira // + 7 ATK
+	Lanca de Ferro // + 20 ATK
+	Lanca de Aco // + 25 ATK
+	Lanca de Adamantio // + 35 ATK
 	*/
     
 	printf ("*** Bem vindo ao text-based RPG Sacred River ***\n\n"); // Mensagem inicial
 	printf("Qual o seu nome?\n\n> ");
-	scanf("%s",&user.nome); // Pede input do usuário e armazena em 'user'
-	fflush(stdin);
+	scanf("%s",&user.nome); // Pede input do usuário e armazena em 'user.nome'
+	fflush(stdin); // Impede input desse 'scanf' ser usada em 'scanf' seguidos
 	Sleep(500); // Delay de 0.5 segundos
 	system("cls"); // Limpa a Tela
 	INICIO:
@@ -118,7 +118,6 @@ COMANDOS:
     system("cls");
     printf("\n*** Cidade de Noobvile ***\n");
     printf("\n*** Comandos: ***\n- A: Ver stats\n- B: Ver equipamento\n- C: Checar a loja da cidade\n- D: Se aventurar\n\n> ");
-
 	scanf(" %c",&comando1); // Input de comando pro menu acima
 	fflush(stdin); 
 	Sleep(500);
@@ -126,24 +125,25 @@ COMANDOS:
 	{
 		case 'A':
 		case 'a':
-		printf("\n*** STATS ***\nATK: %d\nDEF: %d\nHP: %d\nGOLD: %d\n\n*************\n",user.ataque,user.defesa,user.hp,user.moedas);
-		printf("\nDigite qualquer tecla para retornar.\n\n> ");
-     	getch();
-     	fflush(stdin);
-     	printf("\n");
-		goto COMANDOS;
+		    printf("\n*** STATS ***\nATK: %d\nDEF: %d\nHP: %d\nGOLD: %d\n\n*************\n",user.ataque,user.defesa,user.hp,user.moedas);
+		    printf("\nDigite qualquer tecla para retornar.\n\n> ");
+        	getch();
+        	fflush(stdin);
+        	printf("\n");
+	    	goto COMANDOS;
 	    break;
 
 	    case 'B':
 	    case 'b':
-	    		printf("\nArma: %s\n",user.arma);
-				printf("\nEscudo: %s\n",user.escudo);
-		printf("\nDigite qualquer tecla para retornar.\n\n> ");
-     	getch();
-     	Sleep(250);
-     	system("cls");
-		goto COMANDOS;
+	        printf("\nArma: %s\n",user.arma);
+	     	printf("\nEscudo: %s\n",user.escudo);
+	    	printf("\nDigite qualquer tecla para retornar.\n\n> ");
+        	getch();
+        	Sleep(250);
+        	system("cls");
+	    	goto COMANDOS;
 		break;
+		
 	    case 'C':
 	    case 'c':
 FERREIRO: /*  Loja do Ferreiro da Cidade principal, acessado via 'D' em COMANDOS: */
@@ -157,10 +157,10 @@ FERREIRO: /*  Loja do Ferreiro da Cidade principal, acessado via 'D' em COMANDOS
 	    {
 	    case 'A':
 	    case 'a':
-	    Sleep(500);
-	    system("cls");
-	    if (user.moedas >= 7)
-	    {
+	        Sleep(500);
+	        system("cls");
+	        if (user.moedas >= 7)
+	        {
 	    user.moedas = user.moedas - 7;
 		printf("\nVoce comprou uma Espada de Aco e a equipou. Enquanto isso roubaram sua espada antiga. Oh nao!\n\nSuas moedas: %d",user.moedas);
 		strcpy(user.arma,"Espada de Aco");
@@ -170,21 +170,22 @@ FERREIRO: /*  Loja do Ferreiro da Cidade principal, acessado via 'D' em COMANDOS
 	    getch();
     	fflush(stdin);
 		goto FERREIRO;
-		}
-		else
-		{
+	    	}
+	    	else
+		    {
 			printf("\nFerreiro: Voce nao tem moedas suficiente para isso! Vaza daqui!\n*Voce foi expulso do ferreiro*\n");
 			printf("\nDigite qualquer tecla para continuar.\n\n> ");
 	        getch();
 			goto COMANDOS;
-		}
+	    	}
 		break;
+		
 		case 'B':
 		case 'b':
-		Sleep(500);
-		system("cls");
-		if (user.moedas >=2)
-		{
+	    	Sleep(500);
+	    	system("cls");
+		    if (user.moedas >=2)
+	     	{
 			Sleep(500);
 			system("cls");
 			user.moedas = user.moedas - 2;
@@ -195,73 +196,73 @@ FERREIRO: /*  Loja do Ferreiro da Cidade principal, acessado via 'D' em COMANDOS
 			printf("\nDigite qualquer tecla para continuar.\n\n> ");
 	        getch();
 		    goto FERREIRO;
-		}
-		else
-		{
+	    	}
+	    	else
+	     	{
 		printf("\nFerreiro: Voce nao tem moedas suficiente para isso! Vaza daqui!\n*Voce foi expulso do ferreiro*\n\nDigite qualquer tecla para voltar.\n\n> ");
 		getch();
 		goto COMANDOS;
 		}
 		break;
+		
         case 'C':
         case 'c':
-        if (user.moedas >=3)
-        {
+            if (user.moedas >=3)
+            {
         	Sleep(500);
         	system("cls");
         	switch (user.hp)
         	{
         		case 1:
-        		user.hp = 6;
+        	    	user.hp = 6;
         		break;
-        		case 2:
-        		user.hp = 7;
+        	    case 2:
+        	    	user.hp = 7;
         		break;
         		case 3:
-        		user.hp = 8;
+        	    	user.hp = 8;
         		break;
         		case 4:
-        		user.hp = 9;
+        	    	user.hp = 9;
         		break;
         		case 10:
-        		printf("\nVoce ja esta com o HP maximo! (10)\n\nDigite qualquer tecla para voltar.\n\n> ");
-        		getch();
-        		Sleep(250);
-        		goto FERREIRO;
+        	    	printf("\nVoce ja esta com o HP maximo! (10)\n\nDigite qualquer tecla para voltar.\n\n> ");
+        	    	getch();
+        	    	Sleep(250);
+        	    	goto FERREIRO;
         		break;
         		default:
-        		user.hp = 10;
+        	    	user.hp = 10;
         		break;
 			}
         	user.moedas = user.moedas - 3;
         	printf("\nVoce comprou e tomou uma pocao de HP.\nHP: %d\n\nSuas moedas: %d\n\nDigite qualquer tecla para voltar.\n\n> ",user.hp,user.moedas);
         	getch();
         	goto FERREIRO;
-		}
-		else
-		{
+	     	}
+	    	else
+	     	{
 			printf("\nFerreiro: Voce nao tem moedas suficiente para isso! Vaza daqui!\n*Voce foi expulso do ferreiro*\n\nDigite qualquer tecla para voltar.\n\n> ");
 			getch();
 	        goto COMANDOS;
-		}
+	    	}
 		break;
 		
 		case 'X':
 		case 'x':
-		Sleep(500);
-		system("cls");
-		goto COMANDOS;
-		break;
-		default: printf("\nComando invalido. Escolha uma das opcoes abaixo.\n"); /* Caso o usuario nao selecione nenhuma coisa pra comprar nem X para sair. */
-		printf("\nDigite qualquer tecla para voltar.\n\n> ");
-	    getch();
-		goto FERREIRO;
-		break;
+	    	Sleep(500);
+	    	system("cls");
+		    goto COMANDOS;
+	    	break;
+	    	default: printf("\nComando invalido. Escolha uma das opcoes abaixo.\n"); /* Caso o usuario nao selecione nenhuma coisa pra comprar nem X para sair. */
+	    	printf("\nDigite qualquer tecla para voltar.\n\n> ");
+	        getch();
+	    	goto FERREIRO;
+	    break;
 		}
             case 'D':
             case 'd':
-            encontro1 = rand() % 2; /* Sorteia um numero entre 0 e 1 - Caso 1: Goblin // Caso 0: Aranha gigante */
-            printf("%d",encontro1);
+            encontro1 = rand() % 2; /* Sorteia um numero entre 0 e 2 - Caso 0: Nao encontra nada e volta para COMANDOS // Caso 1: Goblin // Caso 2: Aranha gigante // */
             switch (encontro1)
 			{
 			case 1:
@@ -271,14 +272,14 @@ FERREIRO: /*  Loja do Ferreiro da Cidade principal, acessado via 'D' em COMANDOS
         		/* Aqui começa a luta com o goblin na floresta */
 COMBATEG1:
                 Sleep(500);
-                printf("\n\n---- Combate com %s ----\nAtaque %s: %d\nDefesa %s: %d\nHP %s: %d\n",goblin.nome,goblin.nome,goblin.ataque,goblin.nome,goblin.defesa,goblin.nome,goblin.hp);
-                printf("\n%s Ataque: %d\n%s Defesa: %d\n%s HP: %d\n",user.nome,user.ataque,user.nome,user.defesa,user.nome,user.hp);
+                printf("\n\n---- Combate com %s ----\nAtaque %s: %d\nDefesa %s: %d\nHP %s: %d\n",goblin.nome,goblin.nome,goblin.ataque,goblin.nome,goblin.defesa,goblin.nome,goblin.hp); // Status Npc
+                printf("\nAtaque %s: %d\nDefesa %s: %d\n HP %s: %d\n",user.nome,user.ataque,user.nome,user.defesa,user.nome,user.hp); // Status User
                 printf("\nA: Atacar\n\nB: Fugir\n\n> ");
         		scanf(" %c",&resposta1);
         		fflush(stdin);
         		Sleep(500);
         		system("cls");
-        		switch (resposta1)
+        		switch (resposta1) // Caso A: combate continua  // Caso B: Usuario tenta fugir (2/3 de chance de dar certo, 1/3 de chance de dar errado e tomar 1 hit e continuar o combate)
         		{
         		    case 'A':
         		    case 'a':
@@ -403,8 +404,8 @@ COMBATE1:
         		/* Aqui começa a luta com npc na floresta */
 COMBATEG2:
                 Sleep(500);
-                printf("\n\n---- Combate com %s ----\nAtaque %s: %d\nDefesa %s: %d\nHP %s: %d\n",aranha.nome,aranha.nome,aranha.ataque,aranha.nome,aranha.defesa,aranha.nome,aranha.hp);
-                printf("\n%s Ataque: %d\n%s Defesa: %d\n%s HP: %d\n",user.nome,user.ataque,user.nome,user.defesa,user.nome,user.hp);
+                printf("\n\n---- Combate com %s ----\nAtaque %s: %d\nDefesa %s: %d\nHP %s: %d\n",aranha.nome,aranha.nome,aranha.ataque,aranha.nome,aranha.defesa,aranha.nome,aranha.hp); // Status NPC
+                printf("\nAtaque %s: %d\nDefesa %s: %d\n HP %s: %d\n",user.nome,user.ataque,user.nome,user.defesa,user.nome,user.hp); // Status User
                 printf("\nA: Atacar\n\nB: Fugir\n\n> ");
         		scanf(" %c",&resposta1);
         		fflush(stdin);
@@ -414,8 +415,7 @@ COMBATEG2:
         		{
         		    case 'A':
         		    case 'a':
-COMBATE2:               
-                        user.hit = rand() % user.ataque/aranha.defesa + 2; // Hit do usuario
+COMBATE2:            user.hit = rand() % user.ataque/aranha.defesa + 2; // Hit do usuario
                         aranha.hit = rand() % aranha.ataque/user.defesa + 2; // Hit do npc
 						user.hp = user.hp - aranha.hit; // Hp do usuario
 						aranha.hp = aranha.hp - user.hit; // Hp do npc

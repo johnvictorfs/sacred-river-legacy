@@ -30,7 +30,19 @@ CHANGELOG - V-0.8 -> V-0.9
 
 - Interface de combate foi levemente melhorada.
 
+CHANGELOG - v-0.9 -> v-0.9.1
 
+- Ao morrer agora você pode reiniciar o jogo sem ter que o reabrir.
+
+- Adicionado um delay a certas respostas a comandos antes deles acontecerem.
+
+- Aumentado a chance de encontrar uma aranha gigante (2/7) ao se aventurar.
+
+- Diminuido a chance de não encontrar nada ao se aventurar (de 1/3 para 1/7).
+
+- Adicionado a chance de encontrar um NPC esqueleto (1/7) ao se aventurar (pode dar um livro de força ao matar (1/5 de chance), dá +5 atk permanente).
+
+- Corrigido erro em que se o usuário usar uma opção inválida ao encontrar um NPC, ele seria jogado para a tela de comandos.
 
 
 

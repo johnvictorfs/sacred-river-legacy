@@ -10,6 +10,8 @@
 
 # to do list:
 
+- Fazer com que mortes apenas tirem algo do usuário e leve-o para a cidade inicial, ao invés de reiniciar o jogo.
+
 - Adicionar mais coisas na loja:
  
  > poção de força?
@@ -26,3 +28,5 @@
 # erros conhecidos:
 
 - Ao comprar um item novo, uma mensagem de que roubaram um item antigo irá aparecer mesmo caso você não tenha nada equipado nesse slot.
+
+- Certas combinações de hits em combates que duram mais que 2 turnos irão causar o jogo a crashar.

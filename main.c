@@ -12,6 +12,7 @@ struct Character {
 	int ataque;
 	int loot;
 	int hit;
+	int lootraro;
 	char arma[50];
 	char escudo[50];
 };
@@ -22,7 +23,9 @@ int main(int argc, char *argv[]) {
 	struct Character user; // Declaração Usuário
 	struct Character goblin; // Declaração goblin
 	struct Character aranha; // Declaração aranha gigante
+	struct Character esqueleto; // Declaração esqueleto
 	
+	START:
 	// Stats iniciais (user)
 	user.moedas = 5;
 	user.hp = 10;
@@ -42,6 +45,15 @@ int main(int argc, char *argv[]) {
     aranha.hp = 8;
     aranha.loot = 5;
     strcpy(aranha.nome,"Aranha Gigante");
+    
+    // Stats (esqueleto)
+    esqueleto.ataque = 6;
+    esqueleto.defesa = 4;
+    esqueleto.hp = 11;
+    esqueleto.loot = 7;
+    esqueleto.lootraro = 5;
+    strcpy(esqueleto.nome,"Esqueleto");
+    
 
 	int res2,encontro1;
 	char inicial,comando1,loja1,resposta1;
@@ -262,10 +274,12 @@ FERREIRO: /*  Loja do Ferreiro da Cidade principal, acessado via 'D' em COMANDOS
 		}
             case 'D':
             case 'd':
-            encontro1 = rand() % 2; /* Sorteia um numero entre 0 e 2 - Caso 0: Nao encontra nada e volta para COMANDOS // Caso 1: Goblin // Caso 2: Aranha gigante // */
+            encontro1 = rand() % 7; /* Sorteia um numero entre 0 e 2 - Caso 0: Nao encontra nada e volta para COMANDOS // Caso 1: Goblin // Caso 2: Aranha gigante // */
+            // printf("%d",encontro1); - Mostra na tela o numero do sorteio, usado para testes
             switch (encontro1)
 			{
 			case 1:
+			case 3:
             Sleep(500);
 		    system("cls");
         		printf("\n*Andando pela floresta voce encontrou %s!*",goblin.nome);
@@ -273,7 +287,7 @@ FERREIRO: /*  Loja do Ferreiro da Cidade principal, acessado via 'D' em COMANDOS
 COMBATEG1:
                 Sleep(500);
                 printf("\n\n---- Combate com %s ----\nAtaque %s: %d\nDefesa %s: %d\nHP %s: %d\n",goblin.nome,goblin.nome,goblin.ataque,goblin.nome,goblin.defesa,goblin.nome,goblin.hp); // Status Npc
-                printf("\nAtaque %s: %d\nDefesa %s: %d\n HP %s: %d\n",user.nome,user.ataque,user.nome,user.defesa,user.nome,user.hp); // Status User
+                printf("\nAtaque %s: %d\nDefesa %s: %d\nHP %s: %d\n",user.nome,user.ataque,user.nome,user.defesa,user.nome,user.hp); // Status User
                 printf("\nA: Atacar\n\nB: Fugir\n\n> ");
         		scanf(" %c",&resposta1);
         		fflush(stdin);
@@ -309,14 +323,18 @@ COMBATE1:
                         if (user.hp <= 0 && goblin.hp <= 0)
 						{
 							printf("\n\nVoce matou o %s! -- Mas espere... Oh ceus, %s morreu!\n\n*************************\n\n GAME OVER\n\n*************************",goblin.nome,user.nome);
-							printf("\nDigite qualquer tecla para finalizar.\n\n> ");
-        			     	getch();
-                        	return 0;
+							printf("\nDigite qualquer tecla para reiniciar o Jogo.\n");
+							getch();
+							Sleep(500);
+							system("cls");
+							goto START;
 						}
 						else if  (user.hp > 0 && goblin.hp > 0)
 						{
 							printf("\n\nDigite Y para atacar novamente ou outra tecla para Fugir.\n\n> ");
 							scanf(" %c",&res2);
+							Sleep(500);
+                            system("cls");
                         switch (res2)
                         {
                         	case 'Y':
@@ -342,7 +360,11 @@ COMBATE1:
 						else if (user.hp <= 0 && goblin.hp > 0)
 						{
 							printf("\n\nOh ceus, %s morreu!\n\n*************************\n\n GAME OVER\n\n*************************",user.nome);
-							return 0;
+							printf("\nDigite qualquer tecla para reiniciar o Jogo.\n");
+							getch();
+							Sleep(500);
+							system("cls");
+							goto START;
 						}
 						break;
 					case 'B':
@@ -371,9 +393,11 @@ COMBATE1:
 						if (user.hp <= 0)
 						{
 							printf("\n\nOh ceus, %s morreu!\n\n*************************\n\n GAME OVER\n\n*************************",user.nome);
-							printf("\nDigite qualquer tecla para finalizar.\n\n> ");
-        			     	getch();
-							return 0;
+							printf("\nDigite qualquer tecla para reiniciar o Jogo.\n");
+							getch();
+							Sleep(500);
+							system("cls");
+							goto START;
 						}
 						else 
 					    {
@@ -395,9 +419,14 @@ COMBATE1:
         				break;
 					}
 					break;
+					default:
+					printf("\nComando invalido. escolha uma das opcoes abaixo.\n");
+	                Sleep(500);
+	                goto COMBATEG1;
 			}
 		break;
-		case 2:
+		case 0:
+		case 4:
 		Sleep(500);
 		    system("cls");
         		printf("\n*Andando pela floresta voce encontrou %s!*",aranha.nome);
@@ -405,7 +434,7 @@ COMBATE1:
 COMBATEG2:
                 Sleep(500);
                 printf("\n\n---- Combate com %s ----\nAtaque %s: %d\nDefesa %s: %d\nHP %s: %d\n",aranha.nome,aranha.nome,aranha.ataque,aranha.nome,aranha.defesa,aranha.nome,aranha.hp); // Status NPC
-                printf("\nAtaque %s: %d\nDefesa %s: %d\n HP %s: %d\n",user.nome,user.ataque,user.nome,user.defesa,user.nome,user.hp); // Status User
+                printf("\nAtaque %s: %d\nDefesa %s: %d\nHP %s: %d\n",user.nome,user.ataque,user.nome,user.defesa,user.nome,user.hp); // Status User
                 printf("\nA: Atacar\n\nB: Fugir\n\n> ");
         		scanf(" %c",&resposta1);
         		fflush(stdin);
@@ -440,14 +469,18 @@ COMBATE2:            user.hit = rand() % user.ataque/aranha.defesa + 2; // Hit d
                         if (user.hp <= 0 && aranha.hp <= 0)
 						{
 							printf("\n\nVoce matou %s! -- Mas espere... Oh ceus, %s morreu!\n\n*************************\n\n GAME OVER\n\n*************************",aranha.nome,user.nome);
-							printf("\nDigite qualquer tecla para finalizar.\n\n> ");
-        			     	getch();
-                        	return 0;
+							printf("\nDigite qualquer tecla para reiniciar o Jogo.\n");
+							getch();
+							Sleep(500);
+							system("cls");
+							goto START;
 						}
 						else if  (user.hp > 0 && aranha.hp > 0)
 						{
 							printf("\n\nDigite Y para atacar novamente ou outra tecla para Fugir.\n\n> ");
 							scanf(" %c",&res2);
+							Sleep(500);
+							system("cls");
                         switch (res2)
                         {
                         	case 'Y':
@@ -473,9 +506,11 @@ COMBATE2:            user.hit = rand() % user.ataque/aranha.defesa + 2; // Hit d
 						else if (user.hp <= 0 && aranha.hp > 0)
 						{
 							printf("\n\nOh ceus, %s morreu!\n\n*************************\n\n GAME OVER\n\n*************************",user.nome);
-							printf("\nDigite qualquer tecla para finalizar.\n\n> ");
-        			     	getch();
-							return 0;
+							printf("\nDigite qualquer tecla para reiniciar o Jogo.\n");
+							getch();
+							Sleep(500);
+							system("cls");
+							goto START;
 						}
 						break;
 					case 'B':
@@ -504,9 +539,11 @@ COMBATE2:            user.hit = rand() % user.ataque/aranha.defesa + 2; // Hit d
 						if (user.hp <= 0)
 						{
 							printf("\n\nOh ceus, %s morreu!\n\n*************************\n\n GAME OVER\n\n*************************",user.nome);
-							printf("\nDigite qualquer tecla para finalizar.\n\n> ");
-        			     	getch();
-							return 0;
+							printf("\nDigite qualquer tecla para reiniciar o Jogo.\n");
+							getch();
+							Sleep(500);
+							system("cls");
+							goto START;
 						}
 						else 
 				     	{
@@ -528,8 +565,163 @@ COMBATE2:            user.hit = rand() % user.ataque/aranha.defesa + 2; // Hit d
         				break;
 					}
 					break;
+					default:
+					printf("\nComando invalido. escolha uma das opcoes abaixo.\n");
+	                Sleep(500);
+	                goto COMBATEG2;
 			}
 		break;
+		case 5:
+		system("cls");
+COMBATEG3:
+                Sleep(500);
+                printf("\n\n---- Combate com %s ----\nAtaque %s: %d\nDefesa %s: %d\nHP %s: %d\n",esqueleto.nome,esqueleto.nome,esqueleto.ataque,esqueleto.nome,esqueleto.defesa,esqueleto.nome,esqueleto.hp); // Status Npc
+                printf("\nAtaque %s: %d\nDefesa %s: %d\nHP %s: %d\n",user.nome,user.ataque,user.nome,user.defesa,user.nome,user.hp); // Status User
+                printf("\nA: Atacar\n\nB: Fugir\n\n> ");
+        		scanf(" %c",&resposta1);
+        		fflush(stdin);
+        		Sleep(500);
+        		system("cls");
+        		switch (resposta1) // Caso A: combate continua  // Caso B: Usuario tenta fugir (2/3 de chance de dar certo, 1/3 de chance de dar errado e tomar 1 hit e continuar o combate)
+        		{
+        		    case 'A':
+        		    case 'a':
+COMBATE3:               
+                        user.hit = rand() % user.ataque/esqueleto.defesa + 2; // Hit do usuario
+                        esqueleto.hit = rand() % esqueleto.ataque/user.defesa + 2; // Hit do gobin
+						user.hp = user.hp - esqueleto.hit; // Hp do usuario
+						esqueleto.hp = esqueleto.hp - user.hit; // Hp do esqueleto
+						if (user.hp < 0)
+						{
+							user.hp = 0;
+						}
+						else 
+						{
+							user.hp = user.hp;
+						}
+						if (esqueleto.hp < 0)
+						{
+							esqueleto.hp = 0;
+						}
+						else
+						{
+							esqueleto.hp = esqueleto.hp;
+						}
+						printf("\n*%s ataca e da %d de dano.*\n*%s ataca e da %d de dano.*\n\nHP de %s: %d\nHP de %s: %d\n\n",user.nome,user.hit,esqueleto.nome,esqueleto.hit,user.nome,user.hp,esqueleto.nome,esqueleto.hp);
+						Sleep(500);
+                        if (user.hp <= 0 && esqueleto.hp <= 0)
+						{
+							printf("\n\nVoce matou o %s! -- Mas espere... Oh ceus, %s morreu!\n\n*************************\n\n GAME OVER\n\n*************************",esqueleto.nome,user.nome);
+							printf("\nDigite qualquer tecla para reiniciar o Jogo.\n");
+							getch();
+							Sleep(500);
+							system("cls");
+							goto START;
+						}
+						else if  (user.hp > 0 && esqueleto.hp > 0)
+						{
+							printf("\n\nDigite Y para atacar novamente ou outra tecla para Fugir.\n\n> ");
+							scanf(" %c",&res2);
+							Sleep(500);
+                            system("cls");
+                        switch (res2)
+                        {
+                        	case 'Y':
+                        	case 'y':
+                        	goto COMBATE3;
+                        	break;
+                        	
+                        	default:
+                        	user.moedas = user.moedas -1;
+                        	printf("Voce fugiu com sucesso para cidade, mas perdeu 1 moeda no caminho!\n\nMoedas: %d\n\n",user.moedas);
+                        	goto COMANDOS;
+						}
+						}
+						else if (user.hp > 0 && esqueleto.hp <= 0)
+						{
+							esqueleto.loot = rand() % esqueleto.loot;
+							esqueleto.lootraro = rand() % esqueleto.lootraro;
+							user.moedas = user.moedas + esqueleto.loot;
+							printf("\n\nParabens, voce matou %s!\n\nHP de %s: %d\n\n*Recompensa: %d moeda(s).*\n\nMoedas: %d\n\n",esqueleto.nome,user.nome,user.hp,esqueleto.loot,user.moedas);
+							switch (esqueleto.lootraro)
+							{
+								case 4:
+								user.ataque = user.ataque + 5;
+								printf("\nAo matar o esqueleto voce encontra com ele um Livro antigo! Apos ler voce se sente mais forte. (+5 ATK)\n\nAtaque de %s: %d",user.nome,user.ataque);
+							}
+							printf("Digite qualquer tecla para continuar.\n\n> ");
+        			    	getch();
+							goto COMANDOS;
+						}
+						else if (user.hp <= 0 && esqueleto.hp > 0)
+						{
+							printf("\n\nOh ceus, %s morreu!\n\n*************************\n\n GAME OVER\n\n*************************",user.nome);
+							printf("\nDigite qualquer tecla para reiniciar o Jogo.\n");
+							getch();
+							Sleep(500);
+							system("cls");
+							goto START;
+						}
+						break;
+					case 'B':
+        			case 'b':
+        			Sleep(500);
+		            system("cls");
+		            int fugir1;
+        			fugir1 = rand() % 2; /* Seleciona um numero aleatorio entre 0 e 2 - caso 0/2 voce nao consegue fugir e toma 1 hit do npc - caso 1 voce foge e volta para COMANDOS: */
+        			switch (fugir1)
+        			{
+        				case 2:
+        				Sleep(500);
+	                	system("cls");
+        				printf("\n*Voce conseguiu fugir com sucesso e voltou para a cidade!*");
+        				printf("\nDigite qualquer tecla para continuar.\n\n> ");
+        				getch();
+        				goto COMANDOS;
+        				break;
+
+					    case 1:
+					    Sleep(500);
+	                	system("cls");
+	                	esqueleto.hit = rand() % esqueleto.ataque/user.defesa + 2;
+						printf("\n*Voce nao conseguiu fugir! %s te deu %d de dano.",esqueleto.nome,esqueleto.hit);
+						user.hp = user.hp - esqueleto.hit;
+						if (user.hp <= 0)
+						{
+							printf("\n\nOh ceus, %s morreu!\n\n*************************\n\n GAME OVER\n\n*************************",user.nome);
+							printf("\nDigite qualquer tecla para reiniciar o Jogo.\n");
+							getch();
+							Sleep(500);
+							system("cls");
+							goto START;
+						}
+						else 
+					    {
+						printf("\nDigite qualquer tecla para continuar.\n\n> ");
+        				getch();
+        				Sleep(500);
+        				system("cls");
+						goto COMBATEG2;
+				     	}
+						break;
+
+						case 0:
+	                    Sleep(500);
+	                	system("cls");
+        				printf("\n*Voce conseguiu fugir com sucesso e voltou para a cidade!*");
+        				printf("\nDigite qualquer tecla para continuar.\n\n> ");
+        				getch();
+        				goto COMANDOS;
+        				break;
+					}
+					default:
+					printf("\nComando invalido. escolha uma das opcoes abaixo.\n");
+	                Sleep(500);
+	                goto COMBATEG3;
+					break;
+			}
+		break;
+		
 		default:
 		system("cls");
 		Sleep(500);

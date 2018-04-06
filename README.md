@@ -1,4 +1,4 @@
-# Sacred River V-0.9
+# Sacred River V-0.9.1
 
 / *Simple open-source text-based RPG made just with C by a begginer programmer.*
 
@@ -10,7 +10,7 @@
 
 # to do list:
 
-- Fazer com que mortes apenas tirem algo do usuário e leve-o para a cidade inicial, ao invés de reiniciar o jogo.
+- Fazer com que mortes apenas tirem algo do usuário (X moedas?) e leve-o para a cidade inicial, ao invés de reiniciar o jogo.
 
 - Adicionar mais coisas na loja:
  

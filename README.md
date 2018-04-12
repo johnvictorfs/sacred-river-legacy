@@ -1,4 +1,4 @@
-# Sacred River V-0.9.1
+# Sacred River V-0.9.2
 
 / *Simple open-source text-based RPG made just with C by a begginer programmer.*
 

@@ -44,6 +44,12 @@ CHANGELOG - v-0.9 -> v-0.9.1
 
 - Corrigido erro em que se o usuário usar uma opção inválida ao encontrar um NPC, ele seria jogado para a tela de comandos.
 
+CHANGELOG - V-0.8 -> V-0.9.1
+
+- O jogo não mais crasha em certas ocasiões de combate onde o cálculo de defesa tornava alguns valores em 0.
+
+
+
 
 
 

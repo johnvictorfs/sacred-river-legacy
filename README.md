@@ -28,5 +28,3 @@
 # erros conhecidos:
 
 - Ao comprar um item novo, uma mensagem de que roubaram um item antigo irá aparecer mesmo caso você não tenha nada equipado nesse slot.
-
-- Certas combinações de hits em combates que duram mais que 2 turnos irão causar o jogo a crashar.

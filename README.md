@@ -25,6 +25,8 @@
 
 - Adicionar um sistema de 'orações' (magias?) com efeitos especiais, sejam de combate ou não.
 
+- Parar de fazer uso de 'goto's no código.
+
 # erros conhecidos:
 
 - Ao comprar um item novo, uma mensagem de que roubaram um item antigo irá aparecer mesmo caso você não tenha nada equipado nesse slot.

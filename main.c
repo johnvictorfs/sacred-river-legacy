@@ -3,29 +3,11 @@
 #include <time.h>
 #include <conio.h>
 #include <windows.h>
-
-struct Character {
-	char nome[50];
-	int moedas;
-	int hp;
-	int defesa;
-	int ataque;
-	int loot;
-	int hit;
-	int lootraro;
-	char arma[50];
-	char escudo[50];
-};
+#include "struct.h"
 
 int main(int argc, char *argv[]) {
 	srand(time(NULL));
 	
-	struct Character user; // Declaração Usuário
-	struct Character goblin; // Declaração goblin
-	struct Character aranha; // Declaração aranha gigante
-	struct Character esqueleto; // Declaração esqueleto
-	
-	START:
 	// Stats iniciais (user)
 	user.moedas = 5;
 	user.hp = 10;
@@ -53,8 +35,7 @@ int main(int argc, char *argv[]) {
     esqueleto.loot = 7;
     esqueleto.lootraro = 5;
     strcpy(esqueleto.nome,"Esqueleto");
-    
-
+	
 	int res2,encontro1;
 	char inicial,comando1,loja1,resposta1;
 
@@ -74,7 +55,6 @@ int main(int argc, char *argv[]) {
 	Lanca de Aco // + 25 ATK
 	Lanca de Adamantio // + 35 ATK
 	*/
-    
 	printf ("*** Bem vindo ao text-based RPG Sacred River ***\n\n"); // Mensagem inicial
 	printf("Qual o seu nome?\n\n> ");
 	scanf("%s",&user.nome); // Pede input do usuário e armazena em 'user.nome'
@@ -245,7 +225,6 @@ FERREIRO: /*  Loja do Ferreiro da Cidade principal, acessado via 'D' em COMANDOS
         		break;
         		default:
         	    	user.hp = 10;
-        		break;
 			}
         	user.moedas = user.moedas - 3;
         	printf("\nVoce comprou e tomou uma pocao de HP.\nHP: %d\n\nSuas moedas: %d\n\nDigite qualquer tecla para voltar.\n\n> ",user.hp,user.moedas);
@@ -270,7 +249,6 @@ FERREIRO: /*  Loja do Ferreiro da Cidade principal, acessado via 'D' em COMANDOS
 	    	printf("\nDigite qualquer tecla para voltar.\n\n> ");
 	        getch();
 	    	goto FERREIRO;
-	    break;
 		}
             case 'D':
             case 'd':
@@ -298,10 +276,31 @@ COMBATEG1:
         		    case 'A':
         		    case 'a':
 COMBATE1:               
-                        user.hit = rand() % user.ataque/goblin.defesa + 2; // Hit do usuario
-                        goblin.hit = rand() % goblin.ataque/user.defesa + 2; // Hit do gobin
+                                                // Calculo do hit do Usuario
+                        if (goblin.defesa <= 0)
+                        {
+                        	user.hit = rand() % user.ataque + 2;
+						}
+						else
+					    {
+					    	user.hit = rand() % user.ataque - (goblin.defesa/5) + 1;
+						}
+						// Calculo do hit do NPC
+                        if (user.defesa <= 0)
+                        {
+                        	goblin.hit = rand() % goblin.ataque + 2;
+						}
+						else
+						{
+							goblin.hit = rand() % goblin.ataque - (user.defesa/5) + 1;
+						}
+						
+						if (goblin.hit <= 0)
+						{
+							goblin.hit = 0;
+						}
 						user.hp = user.hp - goblin.hit; // Hp do usuario
-						goblin.hp = goblin.hp - user.hit; // Hp do goblin
+						goblin.hp = goblin.hp - user.hit; // Hp do npc
 						if (user.hp < 0)
 						{
 							user.hp = 0;
@@ -327,7 +326,7 @@ COMBATE1:
 							getch();
 							Sleep(500);
 							system("cls");
-							goto START;
+							//goto START;
 						}
 						else if  (user.hp > 0 && goblin.hp > 0)
 						{
@@ -364,7 +363,7 @@ COMBATE1:
 							getch();
 							Sleep(500);
 							system("cls");
-							goto START;
+							//goto START;
 						}
 						break;
 					case 'B':
@@ -397,7 +396,7 @@ COMBATE1:
 							getch();
 							Sleep(500);
 							system("cls");
-							goto START;
+							//goto START;
 						}
 						else 
 					    {
@@ -444,8 +443,30 @@ COMBATEG2:
         		{
         		    case 'A':
         		    case 'a':
-COMBATE2:            user.hit = rand() % user.ataque/aranha.defesa + 2; // Hit do usuario
-                        aranha.hit = rand() % aranha.ataque/user.defesa + 2; // Hit do npc
+COMBATE2:            
+                        // Calculo do hit do Usuario
+                        if (aranha.defesa <= 0)
+                        {
+                        	user.hit = rand() % user.ataque + 2;
+						}
+						else
+					    {
+					    	user.hit = rand() % user.ataque - (aranha.defesa/5) + 1;
+						}
+						// Calculo do hit do NPC
+                        if (user.defesa <= 0)
+                        {
+                        	aranha.hit = rand() % aranha.ataque + 2;
+						}
+						else
+						{
+							aranha.hit = rand() % aranha.ataque - (user.defesa/5) + 1;
+						}
+						
+						if (aranha.hit <= 0)
+						{
+							aranha.hit = 0;
+						}
 						user.hp = user.hp - aranha.hit; // Hp do usuario
 						aranha.hp = aranha.hp - user.hit; // Hp do npc
 						if (user.hp < 0)
@@ -473,7 +494,7 @@ COMBATE2:            user.hit = rand() % user.ataque/aranha.defesa + 2; // Hit d
 							getch();
 							Sleep(500);
 							system("cls");
-							goto START;
+							//goto START;
 						}
 						else if  (user.hp > 0 && aranha.hp > 0)
 						{
@@ -510,7 +531,7 @@ COMBATE2:            user.hit = rand() % user.ataque/aranha.defesa + 2; // Hit d
 							getch();
 							Sleep(500);
 							system("cls");
-							goto START;
+							//goto START;
 						}
 						break;
 					case 'B':
@@ -543,7 +564,7 @@ COMBATE2:            user.hit = rand() % user.ataque/aranha.defesa + 2; // Hit d
 							getch();
 							Sleep(500);
 							system("cls");
-							goto START;
+							//goto START;
 						}
 						else 
 				     	{
@@ -586,9 +607,31 @@ COMBATEG3:
         		{
         		    case 'A':
         		    case 'a':
-COMBATE3:               
-                        user.hit = rand() % user.ataque/esqueleto.defesa + 2; // Hit do usuario
-                        esqueleto.hit = rand() % esqueleto.ataque/user.defesa + 2; // Hit do gobin
+COMBATE3:                                       
+                        // Calculo do hit do Usuario
+                        if (esqueleto.defesa <= 0)
+                        {
+                        	user.hit = rand() % user.ataque + 2;
+						}
+						else
+					    {
+					    	user.hit = rand() % user.ataque - (esqueleto.defesa/5) + 1;
+						}
+						// Calculo do hit do NPC
+                        if (user.defesa <= 0)
+                        {
+                        	esqueleto.hit = rand() % esqueleto.ataque + 2;
+						}
+						else
+						{
+							esqueleto.hit = rand() % esqueleto.ataque - (user.defesa/5) + 1;
+						}
+						
+						if (esqueleto.hit <= 0)
+						{
+							esqueleto.hit = 0;
+						}
+						
 						user.hp = user.hp - esqueleto.hit; // Hp do usuario
 						esqueleto.hp = esqueleto.hp - user.hit; // Hp do esqueleto
 						if (user.hp < 0)
@@ -616,7 +659,7 @@ COMBATE3:
 							getch();
 							Sleep(500);
 							system("cls");
-							goto START;
+							//goto START;
 						}
 						else if  (user.hp > 0 && esqueleto.hp > 0)
 						{
@@ -660,7 +703,7 @@ COMBATE3:
 							getch();
 							Sleep(500);
 							system("cls");
-							goto START;
+							//goto START;
 						}
 						break;
 					case 'B':
@@ -693,7 +736,7 @@ COMBATE3:
 							getch();
 							Sleep(500);
 							system("cls");
-							goto START;
+                            //goto START;
 						}
 						else 
 					    {
@@ -718,7 +761,6 @@ COMBATE3:
 					printf("\nComando invalido. escolha uma das opcoes abaixo.\n");
 	                Sleep(500);
 	                goto COMBATEG3;
-					break;
 			}
 		break;
 		
@@ -740,6 +782,5 @@ COMBATE3:
 	 printf("\nComando invalido. escolha uma das opcoes abaixo.\n");
 	 Sleep(500);
 	 goto COMANDOS;
-	 break;
 }
 }

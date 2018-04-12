@@ -1,52 +1,52 @@
 CHANGELOG - V-0.7 -> V-0.8
 
-- Adicionada chance (1/2) em COMANDOS do usu·rio n„o achar nada ao se aventurar (D) e acabar voltando para cidade.
+- Adicionada chance (1/2) em COMANDOS do usu√°rio n√£o achar nada ao se aventurar (D) e acabar voltando para cidade.
 
-- Adicionadas mensagens de erro caso o usuario use um comando invalido em diversas situaÁıes
+- Adicionadas mensagens de erro caso o usuario use um comando invalido em diversas situa√ß√µes
 
-- Corrigido certas inconsistÍncias com textos.
+- Corrigido certas inconsist√™ncias com textos.
 
-- Adicionado delay entre a maioria dos comandos e suas funÁıes, para deixar a tela menos confusa para o usu·rio.
+- Adicionado delay entre a maioria dos comandos e suas fun√ß√µes, para deixar a tela menos confusa para o usu√°rio.
 
-- Adicionada uma confirmaÁ„o de apertar qualquer tecla para sair de v·rias telas diferentes.
+- Adicionada uma confirma√ß√£o de apertar qualquer tecla para sair de v√°rias telas diferentes.
 
-- Corrigido a opÁ„o de fugir da batalha ao encontrar um Goblin.
+- Corrigido a op√ß√£o de fugir da batalha ao encontrar um Goblin.
 
-- ApÛs certas aÁıes agora a tela ir· ser limpa de conte˙do desnecess·rio para o usu·rio no momento.
+- Ap√≥s certas a√ß√µes agora a tela ir√° ser limpa de conte√∫do desnecess√°rio para o usu√°rio no momento.
 
-- Adicionado poÁ„o de HP na loja por 3 moedas (cura 5 HP).
+- Adicionado po√ß√£o de HP na loja por 3 moedas (cura 5 HP).
 
 CHANGELOG - V-0.8 -> V-0.9
 
-- Estruturas foram adicionadas para armazenar status do usu·rio e NPC's, facilitando automaÁ„o de atualizaÁıes no cÛdigo e possibilitando uso de certas funÁıes no futuro.
+- Estruturas foram adicionadas para armazenar status do usu√°rio e NPC's, facilitando automa√ß√£o de atualiza√ß√µes no c√≥digo e possibilitando uso de certas fun√ß√µes no futuro.
 
-- HP tanto do usu·io quanto de NPC's quando negativo È agora apenas representado como 0.
+- HP tanto do usu√°io quanto de NPC's quando negativo √© agora apenas representado como 0.
 
-- Certas inconsistÍncias com comandos foram corrigidas.
+- Certas inconsist√™ncias com comandos foram corrigidas.
 
-- Chance de n„o encontrar um NPC ao se aventurar foi alterada de 1/2 para 1/3.
+- Chance de n√£o encontrar um NPC ao se aventurar foi alterada de 1/2 para 1/3.
 
-- Adicionado possÌvel encontro com NPC 'Aranha Gigante' ao se aventurar.
+- Adicionado poss√≠vel encontro com NPC 'Aranha Gigante' ao se aventurar.
 
 - Interface de combate foi levemente melhorada.
 
 CHANGELOG - v-0.9 -> v-0.9.1
 
-- Ao morrer agora vocÍ pode reiniciar o jogo sem ter que o reabrir.
+- Ao morrer agora voc√™ pode reiniciar o jogo sem ter que o reabrir.
 
 - Adicionado um delay a certas respostas a comandos antes deles acontecerem.
 
 - Aumentado a chance de encontrar uma aranha gigante (2/7) ao se aventurar.
 
-- Diminuido a chance de n„o encontrar nada ao se aventurar (de 1/3 para 1/7).
+- Diminuido a chance de n√£o encontrar nada ao se aventurar (de 1/3 para 1/7).
 
-- Adicionado a chance de encontrar um NPC esqueleto (1/7) ao se aventurar (pode dar um livro de forÁa ao matar (1/5 de chance), d· +5 atk permanente).
+- Adicionado a chance de encontrar um NPC esqueleto (1/7) ao se aventurar (pode dar um livro de for√ßa ao matar (1/5 de chance), d√° +5 atk permanente).
 
-- Corrigido erro em que se o usu·rio usar uma opÁ„o inv·lida ao encontrar um NPC, ele seria jogado para a tela de comandos.
+- Corrigido erro em que se o usu√°rio usar uma op√ß√£o inv√°lida ao encontrar um NPC, ele seria jogado para a tela de comandos.
 
-CHANGELOG - V-0.8 -> V-0.9.1
+CHANGELOG - V-0.9.1 -> V-0.9.2
 
-- O jogo n„o mais crasha em certas ocasiıes de combate onde o c·lculo de defesa tornava alguns valores em 0.
+- O jogo n√£o mais crasha em certas ocasi√µes de combate onde o c√°lculo de defesa tornava alguns valores em 0.
 
 
 

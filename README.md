@@ -1,6 +1,6 @@
 # Sacred River V-0.9.2
 
-[https://github.com/johnvictorfs/sacred-river/releases/latest](Download Latest Stable Release)
+[Download Latest Stable Release](https://github.com/johnvictorfs/sacred-river/releases/latest)
 
 / *Simple open-source text-based RPG made just with C by a begginer programmer.*
 

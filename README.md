@@ -1,4 +1,4 @@
-# Sacred River V-0.9.2
+# Sacred River
 
 [Download Latest Stable Release](https://github.com/johnvictorfs/sacred-river/releases/latest)
 
